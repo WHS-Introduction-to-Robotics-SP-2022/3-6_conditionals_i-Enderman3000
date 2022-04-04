@@ -1,0 +1,19 @@
+int n;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(A0, INPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void loop() {
+  n=analogRead(A0);
+  Serial.println(n);
+  if(n<=512) {
+    digitalWrite(LED_BUILTIN, HIGH);
+  }
+  else {
+    digitalWrite(LED_BUILTIN, LOW);
+  }
+  delay(250);  
+}
